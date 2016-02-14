@@ -1,0 +1,13 @@
+h1 Create a new Event
+
+= form_tag events_path do
+
+  h3 Select an existing Person
+  = select_tag "people", options_from_collection_for_select(Person.all, "id", "name"), include_blank: true
+
+  h3 Or create a new Person
+  = text_field_tag "person[name]", nil, placeholder: :name
+  = text_field_tag "person[description]", nil, placeholder: :description
+
+  p
+    = submit_tag

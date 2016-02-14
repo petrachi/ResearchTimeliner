@@ -1,0 +1,11 @@
+1:
+  literature_id: 1
+  referencee: Relation-1
+
+2:
+  literature_id: 1
+  referencee: Thing-2
+
+3:
+  literature_id: 1
+  referencee: Relation-2

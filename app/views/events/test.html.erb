@@ -1,0 +1,19 @@
+<% thing = Thing.first %>
+
+Thing: <%= thing.title %><br>
+<hr>
+direct_literatures:<br>
+<% thing.references.each do |reference| %>
+  <%= reference.literature.title %><br>
+<% end %>
+<hr>
+relations:<br>
+<% thing.relations.each do |relation| %>
+  ----<br>
+  from: <%= relation.investigator.title %> to : <%= relation.relative.title %> (date: <%= relation.date %>)<br>
+  brief: <%= relation.description %><br>
+  about this:<br>
+  <% relation.references.each do |reference| %>
+    <%= reference.literature.title %><br>
+  <% end %>
+<% end %>
